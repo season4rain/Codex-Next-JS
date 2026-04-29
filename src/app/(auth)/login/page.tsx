@@ -1,3 +1,4 @@
+import { AuthShell } from "@/components/auth/AuthShell";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
@@ -11,18 +12,21 @@ export default async function LoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-100 px-6 py-12">
-      <section className="w-full max-w-md rounded-lg border border-zinc-200 bg-white p-8 shadow-sm">
-        <div className="mb-8 grid gap-2 text-center">
-          <h1 className="text-2xl font-semibold text-zinc-950">Sign in</h1>
-          <p className="text-sm text-zinc-600">
-            Use your email and password to continue.
-          </p>
-        </div>
+    <AuthShell
+      eyebrow="Welcome back"
+      title="Sign in to manage your private workspace."
+      description="A focused authentication starter with local credentials, secure password hashing, and Prisma backed persistence."
+    >
+      <div className="mb-8">
+        <p className="text-sm font-medium text-[#2f6f56]">Account access</p>
+        <h2 className="mt-2 text-2xl font-semibold text-zinc-950">Sign in</h2>
+        <p className="mt-2 text-sm leading-6 text-zinc-600">
+          Use your registered email and password to continue.
+        </p>
+      </div>
         <Suspense>
           <LoginForm />
         </Suspense>
-      </section>
-    </main>
+    </AuthShell>
   );
 }

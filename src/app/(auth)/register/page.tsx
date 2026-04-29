@@ -1,3 +1,4 @@
+import { AuthShell } from "@/components/auth/AuthShell";
 import { RegisterForm } from "@/components/auth/RegisterForm";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
@@ -10,18 +11,21 @@ export default async function RegisterPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-100 px-6 py-12">
-      <section className="w-full max-w-md rounded-lg border border-zinc-200 bg-white p-8 shadow-sm">
-        <div className="mb-8 grid gap-2 text-center">
-          <h1 className="text-2xl font-semibold text-zinc-950">
-            Create account
-          </h1>
-          <p className="text-sm text-zinc-600">
-            Register with an email and password.
-          </p>
-        </div>
+    <AuthShell
+      eyebrow="Start securely"
+      title="Create a clean foundation for authenticated features."
+      description="Register a local account, store credentials safely, and move straight into a protected dashboard built for real app workflows."
+    >
+      <div className="mb-8">
+        <p className="text-sm font-medium text-[#2f6f56]">New account</p>
+        <h2 className="mt-2 text-2xl font-semibold text-zinc-950">
+          Create account
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-zinc-600">
+          Register with your name, email, and a secure password.
+        </p>
+      </div>
         <RegisterForm />
-      </section>
-    </main>
+    </AuthShell>
   );
 }

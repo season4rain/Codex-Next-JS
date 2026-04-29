@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Auth Starter",
-  description: "NextAuth, Prisma, and SQLite authentication starter.",
+  title: "Auth Starter Dashboard",
+  description: "A polished NextAuth, Prisma, and SQLite starter dashboard.",
 };
 
 export default function RootLayout({
